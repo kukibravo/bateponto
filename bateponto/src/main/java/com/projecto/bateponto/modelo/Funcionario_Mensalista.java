@@ -12,7 +12,7 @@ public class Funcionario_Mensalista {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private Boolean isentodoponto;
+	private Boolean isentodeponto;
 	private BigDecimal salariomes;
 	private BigDecimal bonosporentrega;
 	public Long getId() {
@@ -22,10 +22,10 @@ public class Funcionario_Mensalista {
 		this.id = id;
 	}
 	public Boolean getIsentodoponto() {
-		return isentodoponto;
+		return isentodeponto;
 	}
-	public void setIsentodoponto(Boolean isentodoponto) {
-		this.isentodoponto = isentodoponto;
+	public void setIsentodoponto(Boolean isentodeponto) {
+		this.isentodeponto = isentodeponto;
 	}
 	public BigDecimal getSalariomes() {
 		return salariomes;
@@ -45,7 +45,7 @@ public class Funcionario_Mensalista {
 		int result = 1;
 		result = prime * result + ((bonosporentrega == null) ? 0 : bonosporentrega.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((isentodoponto == null) ? 0 : isentodoponto.hashCode());
+		result = prime * result + ((isentodeponto == null) ? 0 : isentodeponto.hashCode());
 		result = prime * result + ((salariomes == null) ? 0 : salariomes.hashCode());
 		return result;
 	}
@@ -68,10 +68,10 @@ public class Funcionario_Mensalista {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (isentodoponto == null) {
-			if (other.isentodoponto != null)
+		if (isentodeponto == null) {
+			if (other.isentodeponto != null)
 				return false;
-		} else if (!isentodoponto.equals(other.isentodoponto))
+		} else if (!isentodeponto.equals(other.isentodeponto))
 			return false;
 		if (salariomes == null) {
 			if (other.salariomes != null)

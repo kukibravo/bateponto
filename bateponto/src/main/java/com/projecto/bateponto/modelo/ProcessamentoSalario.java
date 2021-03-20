@@ -14,7 +14,7 @@ public class ProcessamentoSalario {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private Integer mes;
-	private Integer exercio;
+	private Integer exercicio;
 	private LocalDate dataprocessamento;
 	
 	@OneToOne
@@ -36,12 +36,12 @@ public class ProcessamentoSalario {
 		this.mes = mes;
 	}
 
-	public Integer getExercio() {
-		return exercio;
+	public Integer getExercicio() {
+		return exercicio;
 	}
 
-	public void setExercio(Integer exercio) {
-		this.exercio = exercio;
+	public void setExercio(Integer exercicio) {
+		this.exercicio = exercicio;
 	}
 
 	public LocalDate getDataprocessamento() {
@@ -65,7 +65,7 @@ public class ProcessamentoSalario {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((dataprocessamento == null) ? 0 : dataprocessamento.hashCode());
-		result = prime * result + ((exercio == null) ? 0 : exercio.hashCode());
+		result = prime * result + ((exercicio == null) ? 0 : exercicio.hashCode());
 		result = prime * result + ((funcionariocontrato == null) ? 0 : funcionariocontrato.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((mes == null) ? 0 : mes.hashCode());
@@ -86,10 +86,10 @@ public class ProcessamentoSalario {
 				return false;
 		} else if (!dataprocessamento.equals(other.dataprocessamento))
 			return false;
-		if (exercio == null) {
-			if (other.exercio != null)
+		if (exercicio == null) {
+			if (other.exercicio != null)
 				return false;
-		} else if (!exercio.equals(other.exercio))
+		} else if (!exercicio.equals(other.exercicio))
 			return false;
 		if (funcionariocontrato == null) {
 			if (other.funcionariocontrato != null)
