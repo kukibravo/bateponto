@@ -10,42 +10,35 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Funcionario_Contrato {
+public class FuncionarioContrato extends Funcionario {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private LocalDate datainicio;
 	private LocalDate datafim;
 	private Boolean activo;
-	private String motivocancelamento;
+	private String motivoCancelamento;
 	
 	@OneToOne
-	private Tipo_Contrato tipo_contrato;
+	private TipoContrato tipoContrato;
 	@ManyToOne
-	private Funcionario funcionariocontrato_funcionario;
-	
-	public Funcionario getFuncionariocontrato_funcionario() {
-		return funcionariocontrato_funcionario;
-	}
-	public void setFuncionariocontrato_funcionario(Funcionario funcionariocontrato_funcionario) {
-		this.funcionariocontrato_funcionario = funcionariocontrato_funcionario;
-	}
+	private Funcionario contratoFuncionario;
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public LocalDate getDataInicio() {
+	public LocalDate getDatainicio() {
 		return datainicio;
 	}
-	public void setDataInicio(LocalDate datainicio) {
+	public void setDatainicio(LocalDate datainicio) {
 		this.datainicio = datainicio;
 	}
-	public LocalDate getDataFim() {
+	public LocalDate getDatafim() {
 		return datafim;
 	}
-	public void setDataFim(LocalDate datafim) {
+	public void setDatafim(LocalDate datafim) {
 		this.datafim = datafim;
 	}
 	public Boolean getActivo() {
@@ -55,29 +48,34 @@ public class Funcionario_Contrato {
 		this.activo = activo;
 	}
 	public String getMotivoCancelamento() {
-		return motivocancelamento;
+		return motivoCancelamento;
 	}
-	public void setMotivoCancelamento(String motivocancelamento) {
-		this.motivocancelamento = motivocancelamento;
+	public void setMotivoCancelamento(String motivoCancelamento) {
+		this.motivoCancelamento = motivoCancelamento;
 	}
-	public Tipo_Contrato getTipoContrato() {
-		return tipo_contrato;
+	public TipoContrato getTipoContrato() {
+		return tipoContrato;
 	}
-	public void setTipoContrato(Tipo_Contrato tipoContrato) {
-		this.tipo_contrato = tipoContrato;
+	public void setTipoContrato(TipoContrato tipoContrato) {
+		this.tipoContrato = tipoContrato;
+	}
+	public Funcionario getContratoFuncionario() {
+		return contratoFuncionario;
+	}
+	public void setContratoFuncionario(Funcionario contratoFuncionario) {
+		this.contratoFuncionario = contratoFuncionario;
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((activo == null) ? 0 : activo.hashCode());
+		result = prime * result + ((contratoFuncionario == null) ? 0 : contratoFuncionario.hashCode());
 		result = prime * result + ((datafim == null) ? 0 : datafim.hashCode());
 		result = prime * result + ((datainicio == null) ? 0 : datainicio.hashCode());
-		result = prime * result
-				+ ((funcionariocontrato_funcionario == null) ? 0 : funcionariocontrato_funcionario.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((motivocancelamento == null) ? 0 : motivocancelamento.hashCode());
-		result = prime * result + ((tipo_contrato == null) ? 0 : tipo_contrato.hashCode());
+		result = prime * result + ((motivoCancelamento == null) ? 0 : motivoCancelamento.hashCode());
+		result = prime * result + ((tipoContrato == null) ? 0 : tipoContrato.hashCode());
 		return result;
 	}
 	@Override
@@ -88,11 +86,16 @@ public class Funcionario_Contrato {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Funcionario_Contrato other = (Funcionario_Contrato) obj;
+		FuncionarioContrato other = (FuncionarioContrato) obj;
 		if (activo == null) {
 			if (other.activo != null)
 				return false;
 		} else if (!activo.equals(other.activo))
+			return false;
+		if (contratoFuncionario == null) {
+			if (other.contratoFuncionario != null)
+				return false;
+		} else if (!contratoFuncionario.equals(other.contratoFuncionario))
 			return false;
 		if (datafim == null) {
 			if (other.datafim != null)
@@ -104,28 +107,22 @@ public class Funcionario_Contrato {
 				return false;
 		} else if (!datainicio.equals(other.datainicio))
 			return false;
-		if (funcionariocontrato_funcionario == null) {
-			if (other.funcionariocontrato_funcionario != null)
-				return false;
-		} else if (!funcionariocontrato_funcionario.equals(other.funcionariocontrato_funcionario))
-			return false;
 		if (id == null) {
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (motivocancelamento == null) {
-			if (other.motivocancelamento != null)
+		if (motivoCancelamento == null) {
+			if (other.motivoCancelamento != null)
 				return false;
-		} else if (!motivocancelamento.equals(other.motivocancelamento))
+		} else if (!motivoCancelamento.equals(other.motivoCancelamento))
 			return false;
-		if (tipo_contrato == null) {
-			if (other.tipo_contrato != null)
+		if (tipoContrato == null) {
+			if (other.tipoContrato != null)
 				return false;
-		} else if (!tipo_contrato.equals(other.tipo_contrato))
+		} else if (!tipoContrato.equals(other.tipoContrato))
 			return false;
 		return true;
 	}
 	
-		
 }

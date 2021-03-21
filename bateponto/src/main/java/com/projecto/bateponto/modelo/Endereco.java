@@ -17,8 +17,7 @@ public class Endereco {
 	private String rua;
 	
 	@OneToOne
-	private Funcionario enderecofuncionario_funcionario;
-
+	private Funcionario enderecoFuncionario;
 
 	public Long getId() {
 		return id;
@@ -60,12 +59,12 @@ public class Endereco {
 		this.rua = rua;
 	}
 
-	public Funcionario getEnderecofuncionario_funcionario() {
-		return enderecofuncionario_funcionario;
+	public Funcionario getEnderecoFuncionario() {
+		return enderecoFuncionario;
 	}
 
-	public void setEnderecofuncionario_funcionario(Funcionario enderecofuncionario_funcionario) {
-		this.enderecofuncionario_funcionario = enderecofuncionario_funcionario;
+	public void setEnderecoFuncionario(Funcionario enderecoFuncionario) {
+		this.enderecoFuncionario = enderecoFuncionario;
 	}
 
 	@Override
@@ -73,8 +72,7 @@ public class Endereco {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((bairro == null) ? 0 : bairro.hashCode());
-		result = prime * result
-				+ ((enderecofuncionario_funcionario == null) ? 0 : enderecofuncionario_funcionario.hashCode());
+		result = prime * result + ((enderecoFuncionario == null) ? 0 : enderecoFuncionario.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((pais == null) ? 0 : pais.hashCode());
 		result = prime * result + ((provincia == null) ? 0 : provincia.hashCode());
@@ -96,10 +94,10 @@ public class Endereco {
 				return false;
 		} else if (!bairro.equals(other.bairro))
 			return false;
-		if (enderecofuncionario_funcionario == null) {
-			if (other.enderecofuncionario_funcionario != null)
+		if (enderecoFuncionario == null) {
+			if (other.enderecoFuncionario != null)
 				return false;
-		} else if (!enderecofuncionario_funcionario.equals(other.enderecofuncionario_funcionario))
+		} else if (!enderecoFuncionario.equals(other.enderecoFuncionario))
 			return false;
 		if (id == null) {
 			if (other.id != null)

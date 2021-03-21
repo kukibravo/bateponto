@@ -15,31 +15,33 @@ public class Funcionario {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String nomecompleto;
-	private LocalDate datanascimento;
+	private String nomeCompleto;
+	private LocalDate dataNascimento;
 	private String nacionalidade;
+	
 	@Enumerated(EnumType.STRING)
-	private Sexo_Enum sexo = Sexo_Enum.MASCULINO;
+	private Sexo sexo = Sexo.MASCULINO;
+	
 	@Enumerated(EnumType.STRING)
-	private TipoDocumento_Enum tipodocumento = TipoDocumento_Enum.BI;
-	private String numerodocumento;
+	private TipoDocumento tipoDocumento = TipoDocumento.BI;
+	private String numeroDocumento;
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getNomecompleto() {
-		return nomecompleto;
+	public String getNomeCompleto() {
+		return nomeCompleto;
 	}
-	public void setNomecompleto(String nomecompleto) {
-		this.nomecompleto = nomecompleto;
+	public void setNomeCompleto(String nomeCompleto) {
+		this.nomeCompleto = nomeCompleto;
 	}
-	public LocalDate getDatanascimento() {
-		return datanascimento;
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
 	}
-	public void setDatanascimento(LocalDate datanascimento) {
-		this.datanascimento = datanascimento;
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 	public String getNacionalidade() {
 		return nacionalidade;
@@ -47,35 +49,35 @@ public class Funcionario {
 	public void setNacionalidade(String nacionalidade) {
 		this.nacionalidade = nacionalidade;
 	}
-	public Sexo_Enum getSexo() {
+	public Sexo getSexo() {
 		return sexo;
 	}
-	public void setSexo(Sexo_Enum sexo) {
+	public void setSexo(Sexo sexo) {
 		this.sexo = sexo;
 	}
-	public TipoDocumento_Enum getTipodocumento() {
-		return tipodocumento;
+	public TipoDocumento getTipoDocumento() {
+		return tipoDocumento;
 	}
-	public void setTipodocumento(TipoDocumento_Enum tipodocumento) {
-		this.tipodocumento = tipodocumento;
+	public void setTipoDocumento(TipoDocumento tipoDocumento) {
+		this.tipoDocumento = tipoDocumento;
 	}
-	public String getNumerodocumento() {
-		return numerodocumento;
+	public String getNumeroDocumento() {
+		return numeroDocumento;
 	}
-	public void setNumerodocumento(String numerodocumento) {
-		this.numerodocumento = numerodocumento;
+	public void setNumeroDocumento(String numeroDocumento) {
+		this.numeroDocumento = numeroDocumento;
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((datanascimento == null) ? 0 : datanascimento.hashCode());
+		result = prime * result + ((dataNascimento == null) ? 0 : dataNascimento.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nacionalidade == null) ? 0 : nacionalidade.hashCode());
-		result = prime * result + ((nomecompleto == null) ? 0 : nomecompleto.hashCode());
-		result = prime * result + ((numerodocumento == null) ? 0 : numerodocumento.hashCode());
+		result = prime * result + ((nomeCompleto == null) ? 0 : nomeCompleto.hashCode());
+		result = prime * result + ((numeroDocumento == null) ? 0 : numeroDocumento.hashCode());
 		result = prime * result + ((sexo == null) ? 0 : sexo.hashCode());
-		result = prime * result + ((tipodocumento == null) ? 0 : tipodocumento.hashCode());
+		result = prime * result + ((tipoDocumento == null) ? 0 : tipoDocumento.hashCode());
 		return result;
 	}
 	@Override
@@ -87,10 +89,10 @@ public class Funcionario {
 		if (getClass() != obj.getClass())
 			return false;
 		Funcionario other = (Funcionario) obj;
-		if (datanascimento == null) {
-			if (other.datanascimento != null)
+		if (dataNascimento == null) {
+			if (other.dataNascimento != null)
 				return false;
-		} else if (!datanascimento.equals(other.datanascimento))
+		} else if (!dataNascimento.equals(other.dataNascimento))
 			return false;
 		if (id == null) {
 			if (other.id != null)
@@ -102,22 +104,20 @@ public class Funcionario {
 				return false;
 		} else if (!nacionalidade.equals(other.nacionalidade))
 			return false;
-		if (nomecompleto == null) {
-			if (other.nomecompleto != null)
+		if (nomeCompleto == null) {
+			if (other.nomeCompleto != null)
 				return false;
-		} else if (!nomecompleto.equals(other.nomecompleto))
+		} else if (!nomeCompleto.equals(other.nomeCompleto))
 			return false;
-		if (numerodocumento == null) {
-			if (other.numerodocumento != null)
+		if (numeroDocumento == null) {
+			if (other.numeroDocumento != null)
 				return false;
-		} else if (!numerodocumento.equals(other.numerodocumento))
+		} else if (!numeroDocumento.equals(other.numeroDocumento))
 			return false;
 		if (sexo != other.sexo)
 			return false;
-		if (tipodocumento != other.tipodocumento)
+		if (tipoDocumento != other.tipoDocumento)
 			return false;
 		return true;
 	}
-	
-	
 }

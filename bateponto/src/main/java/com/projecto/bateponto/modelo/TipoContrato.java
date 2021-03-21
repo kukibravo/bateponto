@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Tipo_Contrato {
+public class TipoContrato {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -47,7 +47,7 @@ public class Tipo_Contrato {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Tipo_Contrato other = (Tipo_Contrato) obj;
+		TipoContrato other = (TipoContrato) obj;
 		if (activo == null) {
 			if (other.activo != null)
 				return false;

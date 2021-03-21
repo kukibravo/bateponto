@@ -1,6 +1,6 @@
 package com.projecto.bateponto.modelo;
 
-public enum TipoDocumento_Enum {
+public enum TipoDocumento {
 
 	BI,
 	PASSAPORTE,

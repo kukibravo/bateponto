@@ -1,6 +1,6 @@
 package com.projecto.bateponto.modelo;
 
-public enum Sexo_Enum {
+public enum Sexo {
 
 	MASCULINO,
 	FEMENINO;

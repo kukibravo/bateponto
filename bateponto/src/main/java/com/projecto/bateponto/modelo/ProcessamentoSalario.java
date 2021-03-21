@@ -15,10 +15,10 @@ public class ProcessamentoSalario {
 	private Long id;
 	private Integer mes;
 	private Integer exercicio;
-	private LocalDate dataprocessamento;
+	private LocalDate dataProcessamento;
 	
 	@OneToOne
-	private Funcionario_Contrato funcionariocontrato;
+	private FuncionarioContrato funcionarioContrato;
 
 	public Long getId() {
 		return id;
@@ -40,33 +40,33 @@ public class ProcessamentoSalario {
 		return exercicio;
 	}
 
-	public void setExercio(Integer exercicio) {
+	public void setExercicio(Integer exercicio) {
 		this.exercicio = exercicio;
 	}
 
-	public LocalDate getDataprocessamento() {
-		return dataprocessamento;
+	public LocalDate getDataProcessamento() {
+		return dataProcessamento;
 	}
 
-	public void setDataprocessamento(LocalDate dataprocessamento) {
-		this.dataprocessamento = dataprocessamento;
+	public void setDataProcessamento(LocalDate dataProcessamento) {
+		this.dataProcessamento = dataProcessamento;
 	}
 
-	public Funcionario_Contrato getFuncionariocontrato() {
-		return funcionariocontrato;
+	public FuncionarioContrato getFuncionarioContrato() {
+		return funcionarioContrato;
 	}
 
-	public void setFuncionariocontrato(Funcionario_Contrato funcionariocontrato) {
-		this.funcionariocontrato = funcionariocontrato;
+	public void setFuncionarioContrato(FuncionarioContrato funcionarioContrato) {
+		this.funcionarioContrato = funcionarioContrato;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((dataprocessamento == null) ? 0 : dataprocessamento.hashCode());
+		result = prime * result + ((dataProcessamento == null) ? 0 : dataProcessamento.hashCode());
 		result = prime * result + ((exercicio == null) ? 0 : exercicio.hashCode());
-		result = prime * result + ((funcionariocontrato == null) ? 0 : funcionariocontrato.hashCode());
+		result = prime * result + ((funcionarioContrato == null) ? 0 : funcionarioContrato.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((mes == null) ? 0 : mes.hashCode());
 		return result;
@@ -81,20 +81,20 @@ public class ProcessamentoSalario {
 		if (getClass() != obj.getClass())
 			return false;
 		ProcessamentoSalario other = (ProcessamentoSalario) obj;
-		if (dataprocessamento == null) {
-			if (other.dataprocessamento != null)
+		if (dataProcessamento == null) {
+			if (other.dataProcessamento != null)
 				return false;
-		} else if (!dataprocessamento.equals(other.dataprocessamento))
+		} else if (!dataProcessamento.equals(other.dataProcessamento))
 			return false;
 		if (exercicio == null) {
 			if (other.exercicio != null)
 				return false;
 		} else if (!exercicio.equals(other.exercicio))
 			return false;
-		if (funcionariocontrato == null) {
-			if (other.funcionariocontrato != null)
+		if (funcionarioContrato == null) {
+			if (other.funcionarioContrato != null)
 				return false;
-		} else if (!funcionariocontrato.equals(other.funcionariocontrato))
+		} else if (!funcionarioContrato.equals(other.funcionarioContrato))
 			return false;
 		if (id == null) {
 			if (other.id != null)
@@ -108,6 +108,5 @@ public class ProcessamentoSalario {
 			return false;
 		return true;
 	}
-	
-	
+
 }
